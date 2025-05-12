@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <title>Goikode - Especialistas en Ciberseguridad</title>
     <style>
         :root {
@@ -289,57 +290,28 @@
             text-align: center;
         }
 
-        .footer-content {
+        .social-links {
             display: flex;
-            justify-content: space-between;
-            margin-bottom: 30px;
+            justify-content: center;
+            margin-bottom: 20px;
         }
 
-        .footer-logo {
-            width: 30%;
-        }
-
-        .footer-logo .logo {
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
             color: white;
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-        }
-
-        .footer-links,
-        .footer-contact {
-            width: 30%;
-        }
-
-        .footer-links h4,
-        .footer-contact h4 {
-            color: white;
-            margin-bottom: 15px;
-        }
-
-        .footer-links ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .footer-links a {
-            color: #ddd;
+            margin: 0 10px;
             text-decoration: none;
-            display: block;
-            margin-bottom: 8px;
+            transition: background-color 0.3s;
         }
 
-        .footer-links a:hover {
-            color: white;
-        }
-
-        .footer-contact p {
-            color: #ddd;
-            margin-bottom: 8px;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 20px;
+        .social-icon:hover {
+            background-color: var(--primary-color);
         }
     </style>
 </head>
@@ -510,28 +482,14 @@
 
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <div class="logo">&lt;goikode&gt;</div>
-                    <p>Especialistas en ciberseguridad</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Enlaces rápidos</h4>
-                    <ul>
-                        <li><a href="#servicios">Servicios</a></li>
-                        <li><a href="#blog">Blog</a></li>
-                        <li><a href="#contacto">Contacto</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h4>Contacto</h4>
-                    <p>Email: info@goikode.com</p>
-                    <p>Teléfono: +34 123 456 789</p>
-                </div>
+            <div class="social-links">
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 Goikode. Todos los derechos reservados.</p>
-            </div>
+            <p>&copy; 2023 Goikode. Todos los derechos reservados.</p>
+            <p>Síguenos en redes sociales para estar al día de las últimas noticias en ciberseguridad</p>
         </div>
     </footer>
     <script>
