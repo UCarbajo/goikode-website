@@ -288,6 +288,59 @@
             padding: 30px 0;
             text-align: center;
         }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo {
+            width: 30%;
+        }
+
+        .footer-logo .logo {
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .footer-links,
+        .footer-contact {
+            width: 30%;
+        }
+
+        .footer-links h4,
+        .footer-contact h4 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-contact p {
+            color: #ddd;
+            margin-bottom: 8px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+        }
     </style>
 </head>
 
@@ -457,7 +510,28 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2023 Goikode. Todos los derechos reservados.</p>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo">&lt;goikode&gt;</div>
+                    <p>Especialistas en ciberseguridad</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Enlaces rápidos</h4>
+                    <ul>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p>Email: info@goikode.com</p>
+                    <p>Teléfono: +34 123 456 789</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Goikode. Todos los derechos reservados.</p>
+            </div>
         </div>
     </footer>
     <script>
