@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,83 +13,83 @@
             --light-bg: #f5f7f8;
             --white: #ffffff;
         }
-        
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-        
+
         body {
             font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             line-height: 1.6;
             color: var(--text-color);
         }
-        
+
         header {
             background-color: var(--primary-color);
             padding: 20px 0;
         }
-        
+
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
         }
-        
+
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .logo {
             color: white;
             font-size: 2rem;
             font-weight: bold;
         }
-        
+
         .nav-links {
             display: flex;
             list-style: none;
         }
-        
+
         .nav-links li {
             margin-left: 20px;
         }
-        
+
         .nav-links a {
             color: white;
             text-decoration: none;
             text-transform: uppercase;
             font-weight: 500;
         }
-        
+
         .hero {
             background-color: var(--light-bg);
             padding: 60px 0;
         }
-        
+
         .hero-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .hero-text {
             width: 50%;
         }
-        
+
         .hero-text h1 {
             font-size: 2.5rem;
             color: var(--secondary-color);
             margin-bottom: 20px;
         }
-        
+
         .hero-text p {
             margin-bottom: 30px;
         }
-        
+
         .btn {
             display: inline-block;
             background-color: var(--primary-color);
@@ -98,32 +99,32 @@
             border-radius: 4px;
             font-weight: 500;
         }
-        
+
         .hero-image {
             width: 40%;
         }
-        
+
         .hero-image img {
             width: 100%;
             height: auto;
         }
-        
+
         .services {
             padding: 60px 0;
         }
-        
+
         .section-title {
             text-align: center;
             margin-bottom: 40px;
             color: var(--secondary-color);
         }
-        
+
         .service-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 30px;
         }
-        
+
         .service-card {
             background: var(--white);
             border-radius: 8px;
@@ -131,7 +132,7 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             display: flex;
         }
-        
+
         .service-icon {
             width: 80px;
             height: 80px;
@@ -142,17 +143,67 @@
             justify-content: center;
             margin-right: 20px;
         }
-        
+
         .service-content h3 {
             color: var(--secondary-color);
             margin-bottom: 15px;
         }
-        
+
+        .blog {
+            padding: 60px 0;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .blog-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .blog-content {
+            padding: 20px;
+        }
+
+        .blog-content h3 {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .blog-date {
+            color: #777;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .blog-link {
+            display: inline-block;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 15px;
+        }
+
+        .blog-link:hover {
+            text-decoration: underline;
+        }
+
         .contact {
             background-color: var(--light-bg);
             padding: 60px 0;
         }
-        
+
         .contact-form {
             max-width: 600px;
             margin: 0 auto;
@@ -161,17 +212,17 @@
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-        
+
         .form-group {
             margin-bottom: 20px;
         }
-        
+
         .form-group label {
             display: block;
             margin-bottom: 5px;
             font-weight: 500;
         }
-        
+
         .form-group input,
         .form-group textarea {
             width: 100%;
@@ -179,11 +230,11 @@
             border: 1px solid #ddd;
             border-radius: 4px;
         }
-        
+
         .form-group textarea {
             height: 120px;
         }
-        
+
         .submit-btn {
             background-color: var(--primary-color);
             color: white;
@@ -193,7 +244,44 @@
             cursor: pointer;
             font-weight: 500;
         }
-        
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox-group input {
+            width: auto;
+            margin-right: 10px;
+        }
+
+        .error-message {
+            color: #e53935;
+            font-size: 0.8rem;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .success-message {
+            background-color: #4caf50;
+            color: white;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(0, 188, 212, 0.2);
+        }
+
+        .submit-btn:hover {
+            background-color: #00a5b9;
+        }
+
         footer {
             background-color: var(--secondary-color);
             color: white;
@@ -202,6 +290,7 @@
         }
     </style>
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -209,6 +298,7 @@
                 <div class="logo">&lt;goikode&gt;</div>
                 <ul class="nav-links">
                     <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#blog">Blog</a></li>
                     <li><a href="#formacion">Formación</a></li>
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
@@ -234,9 +324,11 @@
     <section id="servicios" class="services">
         <div class="container">
             <h2 class="section-title">Qué nos diferencia</h2>
-            <p>Contamos con un equipo técnico altamente especializado, formado por profesionales certificados con experiencia real en entornos críticos.</p>
-            <p>Nos caracteriza nuestro enfoque práctico y directo, evitando soluciones genéricas en favor de implementaciones precisas basadas en el contexto específico de cada organización.</p>
-            
+            <p>Contamos con un equipo técnico altamente especializado, formado por profesionales certificados con
+                experiencia real en entornos críticos.</p>
+            <p>Nos caracteriza nuestro enfoque práctico y directo, evitando soluciones genéricas en favor de
+                implementaciones precisas basadas en el contexto específico de cada organización.</p>
+
             <div class="service-grid">
                 <div class="service-card">
                     <div class="service-icon">
@@ -244,37 +336,86 @@
                     </div>
                     <div class="service-content">
                         <h3>Cloud Seguro</h3>
-                        <p>Implementamos y gestionamos infraestructuras cloud con seguridad integrada desde el diseño, garantizando entornos escalables y protegidos.</p>
+                        <p>Implementamos y gestionamos infraestructuras cloud con seguridad integrada desde el diseño,
+                            garantizando entornos escalables y protegidos.</p>
                     </div>
                 </div>
-                
+
                 <div class="service-card">
                     <div class="service-icon">
                         <img src="https://placeholder.pics/svg/50/546E7A/FFFFFF/check" alt="Aplicaciones">
                     </div>
                     <div class="service-content">
                         <h3>Aplicaciones seguras</h3>
-                        <p>Creamos y auditamos aplicaciones y servicios. Controlamos desde el diseño hasta la implementación y mantenimiento.</p>
+                        <p>Creamos y auditamos aplicaciones y servicios. Controlamos desde el diseño hasta la
+                            implementación y mantenimiento.</p>
                     </div>
                 </div>
-                
+
                 <div class="service-card">
                     <div class="service-icon">
                         <img src="https://placeholder.pics/svg/50/546E7A/FFFFFF/gear" alt="Soluciones">
                     </div>
                     <div class="service-content">
                         <h3>Soluciones Propias</h3>
-                        <p>Ofrecemos productos exclusivos desarrollados para resolver necesidades específicas de seguridad.</p>
+                        <p>Ofrecemos productos exclusivos desarrollados para resolver necesidades específicas de
+                            seguridad.</p>
                     </div>
                 </div>
-                
+
                 <div class="service-card">
                     <div class="service-icon">
                         <img src="https://placeholder.pics/svg/50/546E7A/FFFFFF/education" alt="Formación">
                     </div>
                     <div class="service-content">
                         <h3>Formación Especializada</h3>
-                        <p>Capacitamos a equipos mediante simulacros de incidentes y campañas de phishing controladas para fortalecer el factor humano en la seguridad.</p>
+                        <p>Capacitamos a equipos mediante simulacros de incidentes y campañas de phishing controladas
+                            para fortalecer el factor humano en la seguridad.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog" class="blog">
+        <div class="container">
+            <h2 class="section-title">Blog de Ciberseguridad</h2>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://placeholder.pics/svg/300x200/00BCD4-546E7A/FFFFFF/ransomware"
+                            alt="Ransomware">
+                    </div>
+                    <div class="blog-content">
+                        <h3>Protección contra Ransomware</h3>
+                        <p class="blog-date">15 de Octubre, 2023</p>
+                        <p>Aprende las mejores prácticas para proteger tu organización contra ataques de ransomware.</p>
+                        <a href="#" class="blog-link">Leer más</a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://placeholder.pics/svg/300x200/00BCD4-546E7A/FFFFFF/phishing" alt="Phishing">
+                    </div>
+                    <div class="blog-content">
+                        <h3>Cómo identificar intentos de phishing</h3>
+                        <p class="blog-date">2 de Octubre, 2023</p>
+                        <p>Guía completa para reconocer y evitar caer en estafas de phishing cada vez más sofisticadas.
+                        </p>
+                        <a href="#" class="blog-link">Leer más</a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://placeholder.pics/svg/300x200/00BCD4-546E7A/FFFFFF/security" alt="Zero Trust">
+                    </div>
+                    <div class="blog-content">
+                        <h3>Arquitectura Zero Trust</h3>
+                        <p class="blog-date">20 de Septiembre, 2023</p>
+                        <p>Implementando el modelo de seguridad Zero Trust en tu infraestructura empresarial.</p>
+                        <a href="#" class="blog-link">Leer más</a>
                     </div>
                 </div>
             </div>
@@ -285,24 +426,30 @@
         <div class="container">
             <h2 class="section-title">¿Cómo podemos ayudarte?</h2>
             <div class="contact-form">
-                <form>
+                <form id="contactForm">
                     <div class="form-group">
                         <label for="email">Tu email *</label>
                         <input type="email" id="email" required>
+                        <span class="error-message" id="email-error"></span>
                     </div>
                     <div class="form-group">
                         <label for="phone">Tu teléfono</label>
                         <input type="tel" id="phone">
+                        <span class="error-message" id="phone-error"></span>
                     </div>
                     <div class="form-group">
                         <label for="message">Tu mensaje *</label>
                         <textarea id="message" required></textarea>
+                        <span class="error-message" id="message-error"></span>
                     </div>
-                    <div class="form-group">
-                        <input type="checkbox" id="privacy">
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="privacy" required>
                         <label for="privacy">He leído la política de privacidad *</label>
+                        <span class="error-message" id="privacy-error"></span>
                     </div>
                     <button type="submit" class="submit-btn">ENVIAR</button>
+                    <div id="form-success" class="success-message">¡Gracias por tu mensaje! Te responderemos lo antes
+                        posible.</div>
                 </form>
             </div>
         </div>
@@ -313,5 +460,82 @@
             <p>&copy; 2023 Goikode. Todos los derechos reservados.</p>
         </div>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const contactForm = document.getElementById('contactForm');
+            const emailInput = document.getElementById('email');
+            const phoneInput = document.getElementById('phone');
+            const messageInput = document.getElementById('message');
+            const privacyCheckbox = document.getElementById('privacy');
+
+            const emailError = document.getElementById('email-error');
+            const phoneError = document.getElementById('phone-error');
+            const messageError = document.getElementById('message-error');
+            const privacyError = document.getElementById('privacy-error');
+            const formSuccess = document.getElementById('form-success');
+
+            contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                let isValid = true;
+
+                // Validar email
+                if (!emailInput.value || !isValidEmail(emailInput.value)) {
+                    emailError.textContent = 'Por favor, introduce un email válido';
+                    emailError.style.display = 'block';
+                    isValid = false;
+                } else {
+                    emailError.style.display = 'none';
+                }
+
+                // Validar teléfono (opcional)
+                if (phoneInput.value && !isValidPhone(phoneInput.value)) {
+                    phoneError.textContent = 'Por favor, introduce un teléfono válido';
+                    phoneError.style.display = 'block';
+                    isValid = false;
+                } else {
+                    phoneError.style.display = 'none';
+                }
+
+                // Validar mensaje
+                if (!messageInput.value || messageInput.value.length < 10) {
+                    messageError.textContent = 'Por favor, introduce un mensaje de al menos 10 caracteres';
+                    messageError.style.display = 'block';
+                    isValid = false;
+                } else {
+                    messageError.style.display = 'none';
+                }
+
+                // Validar checkbox de privacidad
+                if (!privacyCheckbox.checked) {
+                    privacyError.textContent = 'Debes aceptar la política de privacidad';
+                    privacyError.style.display = 'block';
+                    isValid = false;
+                } else {
+                    privacyError.style.display = 'none';
+                }
+
+                // Si todo es válido, mostrar mensaje de éxito
+                if (isValid) {
+                    contactForm.reset();
+                    formSuccess.style.display = 'block';
+                    setTimeout(() => {
+                        formSuccess.style.display = 'none';
+                    }, 5000);
+                }
+            });
+
+            function isValidEmail(email) {
+                const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return regex.test(email);
+            }
+
+            function isValidPhone(phone) {
+                const regex = /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/;
+                return regex.test(phone);
+            }
+        });
+    </script>
+
 </body>
+
 </html>
