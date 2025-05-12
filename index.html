@@ -245,6 +245,43 @@
             font-weight: 500;
         }
 
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox-group input {
+            width: auto;
+            margin-right: 10px;
+        }
+
+        .error-message {
+            color: #e53935;
+            font-size: 0.8rem;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .success-message {
+            background-color: #4caf50;
+            color: white;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(0, 188, 212, 0.2);
+        }
+
+        .submit-btn:hover {
+            background-color: #00a5b9;
+        }
+
         footer {
             background-color: var(--secondary-color);
             color: white;
@@ -389,24 +426,30 @@
         <div class="container">
             <h2 class="section-title">¿Cómo podemos ayudarte?</h2>
             <div class="contact-form">
-                <form>
+                <form id="contactForm">
                     <div class="form-group">
                         <label for="email">Tu email *</label>
                         <input type="email" id="email" required>
+                        <span class="error-message" id="email-error"></span>
                     </div>
                     <div class="form-group">
                         <label for="phone">Tu teléfono</label>
                         <input type="tel" id="phone">
+                        <span class="error-message" id="phone-error"></span>
                     </div>
                     <div class="form-group">
                         <label for="message">Tu mensaje *</label>
                         <textarea id="message" required></textarea>
+                        <span class="error-message" id="message-error"></span>
                     </div>
-                    <div class="form-group">
-                        <input type="checkbox" id="privacy">
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="privacy" required>
                         <label for="privacy">He leído la política de privacidad *</label>
+                        <span class="error-message" id="privacy-error"></span>
                     </div>
                     <button type="submit" class="submit-btn">ENVIAR</button>
+                    <div id="form-success" class="success-message">¡Gracias por tu mensaje! Te responderemos lo antes
+                        posible.</div>
                 </form>
             </div>
         </div>
@@ -417,6 +460,82 @@
             <p>&copy; 2023 Goikode. Todos los derechos reservados.</p>
         </div>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const contactForm = document.getElementById('contactForm');
+            const emailInput = document.getElementById('email');
+            const phoneInput = document.getElementById('phone');
+            const messageInput = document.getElementById('message');
+            const privacyCheckbox = document.getElementById('privacy');
+
+            const emailError = document.getElementById('email-error');
+            const phoneError = document.getElementById('phone-error');
+            const messageError = document.getElementById('message-error');
+            const privacyError = document.getElementById('privacy-error');
+            const formSuccess = document.getElementById('form-success');
+
+            contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                let isValid = true;
+
+                // Validar email
+                if (!emailInput.value || !isValidEmail(emailInput.value)) {
+                    emailError.textContent = 'Por favor, introduce un email válido';
+                    emailError.style.display = 'block';
+                    isValid = false;
+                } else {
+                    emailError.style.display = 'none';
+                }
+
+                // Validar teléfono (opcional)
+                if (phoneInput.value && !isValidPhone(phoneInput.value)) {
+                    phoneError.textContent = 'Por favor, introduce un teléfono válido';
+                    phoneError.style.display = 'block';
+                    isValid = false;
+                } else {
+                    phoneError.style.display = 'none';
+                }
+
+                // Validar mensaje
+                if (!messageInput.value || messageInput.value.length < 10) {
+                    messageError.textContent = 'Por favor, introduce un mensaje de al menos 10 caracteres';
+                    messageError.style.display = 'block';
+                    isValid = false;
+                } else {
+                    messageError.style.display = 'none';
+                }
+
+                // Validar checkbox de privacidad
+                if (!privacyCheckbox.checked) {
+                    privacyError.textContent = 'Debes aceptar la política de privacidad';
+                    privacyError.style.display = 'block';
+                    isValid = false;
+                } else {
+                    privacyError.style.display = 'none';
+                }
+
+                // Si todo es válido, mostrar mensaje de éxito
+                if (isValid) {
+                    contactForm.reset();
+                    formSuccess.style.display = 'block';
+                    setTimeout(() => {
+                        formSuccess.style.display = 'none';
+                    }, 5000);
+                }
+            });
+
+            function isValidEmail(email) {
+                const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return regex.test(email);
+            }
+
+            function isValidPhone(phone) {
+                const regex = /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/;
+                return regex.test(phone);
+            }
+        });
+    </script>
+
 </body>
 
 </html>
